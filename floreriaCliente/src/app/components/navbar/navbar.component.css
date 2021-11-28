@@ -1,0 +1,76 @@
+nav .primary-navigation {
+    display: block;
+    padding: 120px 0 0 0;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'MonteCarlo', cursive;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#nav {
+    text-align: center;
+    font-size: 30px;
+    font-family: 'MonteCarlo', cursive;
+    margin-bottom: 100px;
+    margin-top: 40px;
+}
+
+div#nav ul {
+    display: inline-block;
+    font-size: 30px;
+    font-family: 'MonteCarlo', cursive;
+}
+
+ul li {
+    list-style: none;
+    margin: 0 auto;
+    border-left: 2px solid #8dcca9;
+    display: inline-block;
+    padding: 0 30px;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'MonteCarlo', cursive;
+}
+
+li a {
+    color: black;
+}
+
+li a:hover {
+    color: #3ca0e7;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+ul li ul {
+    opacity: 0;
+    position: absolute;
+    padding-left: 0;
+    left: 0;
+    background: white;
+}
+
+ul li:hover>ul,
+ul li ul:hover {
+    opacity: 1;
+    display: block;
+    min-width: 250px;
+    text-align: left;
+    padding-top: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3CA0E7;
+}
+
+ul li ul li a {
+    transition: all 0.5s ease;
+}

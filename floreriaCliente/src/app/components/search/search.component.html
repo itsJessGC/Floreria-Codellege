@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<div class="container mt5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">Flowers</span>
+                    <button class="btn btn-success float-end" routerLink="/create-flower">Add</button>
+                    <table class="table table-striped mt-3" *ngIf="listOfFlowers.length > 0">
+                        <thead>
+                            <tr>
+                                <th scope="col">Flower</th>
+                                <th scope="col">Location</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Price</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let flower of listOfFlowers">
+                                <td>{{ flower.name }} </td>
+                                <td>{{ flower.location }}</td>
+                                <td>{{ flower.amount }}</td>
+                                <td>{{ flower.price | currency: 'USD'}}</td>
+                                <td>
+                                    <i class="fas fa-edit" [routerLink]="['/edit-flower', flower._id]"></i>
+                                    <i class="fas fa-trash-alt" (click)="deleteFl(flower._id)"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4 class="empty" *ngIf="listOfFlowers.length == 0">There are no Flowers</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

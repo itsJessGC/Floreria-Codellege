@@ -1,0 +1,17 @@
+.fas {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.fa-edit:hover {
+    color: rgb(52, 154, 182);
+}
+
+.fa-trash-alt:hover {
+    color: rgb(182, 52, 52);
+}
+
+.empty {
+    text-align: start;
+    margin-top: 10px;
+}

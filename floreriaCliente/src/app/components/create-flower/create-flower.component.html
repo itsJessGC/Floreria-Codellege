@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">{{ title }}</span>
+                    <form class="mt-3" [formGroup]="formsFlowers" (ngSubmit)="addFlower()">
+                        <div class="mb-3">
+                            <input type="text" class="form-control form-control-lg" formControlName="flower" placeholder="Flower">
+                            <div class="text-danger" *ngIf="formsFlowers.get('flower')?.hasError('required') && formsFlowers.get('flower')?.touched">
+                                <span>The name of the flower is <strong>required</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control form-control-lg" formControlName="location" placeholder="Location">
+                            <div class="text-danger" *ngIf="formsFlowers.get('location')?.hasError('required') && formsFlowers.get('location')?.touched">
+                                <span>The location of the flower is <strong>required</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" class="form-control form-control-lg" formControlName="amount" placeholder="Amount">
+                            <div class="text-danger" *ngIf="formsFlowers.get('amount')?.hasError('required') && formsFlowers.get('amount')?.touched">
+                                <span>The amount of flowers is <strong>required</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" class="form-control form-control-lg" formControlName="price" placeholder="Price">
+                            <div class="text-danger" *ngIf="formsFlowers.get('price')?.hasError('required') && formsFlowers.get('price')?.touched">
+                                <span>The price of the flower is <strong>required</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-secondary btn-lg float-start" routerLink="/list">Cancel</button>
+                            <button type="submit" class="btn btn-success btn-lg float-end" [disabled]="formsFlowers.invalid">Accept</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
